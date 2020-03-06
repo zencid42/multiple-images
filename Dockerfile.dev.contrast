@@ -1,0 +1,14 @@
+FROM node:alpine
+WORKDIR '/app'
+RUN apk add curl
+#RUN curl -X GET https://apptwo.contrastsecurity.com/Contrast/api/ng/a09a6314-c084-420c-b4fb-9b61794c3d0c/agents/default/NODE -H 'Authorization: emVuY2lkQGdtYWlsLmNvbTpOS1BHNTVaSFY4OTc3STc5' -H 'API-Key: H6j5Z1vFjz58SShUq3bg5EW91Md19E5I' -H 'Accept: application/json' -o node-contrast.tgz
+COPY ./package.json ./
+COPY ./node-contrast.tgz ./
+RUN npm install
+COPY . . 
+RUN npm install node-contrast.tgz --no-optional
+RUN npm install axios
+CMD ["npm","run","start"]
+
+
+#package file edits:     "node_contrast": "file:node-contrast.tgz",

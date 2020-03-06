@@ -1,0 +1,222 @@
+{
+  "_from": "file:node-contrast.tgz",
+  "_id": "node_contrast@2.12.0",
+  "_inBundle": false,
+  "_integrity": "sha512-ne/OUdH1ekCJTrUaPEWAySonheh0xHBrgJhUEqodShKWJn5bsei23S8y949WZUexuhv6hG2PnGK4U3HDDb5wrA==",
+  "_location": "/node_contrast",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/Users/marklacasse/Sandbox/Docker/class/complex/client",
+    "raw": "node-contrast.tgz",
+    "rawSpec": "node-contrast.tgz",
+    "saveSpec": "file:node-contrast.tgz",
+    "fetchSpec": "/Users/marklacasse/Sandbox/Docker/class/complex/client/node-contrast.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/Users/marklacasse/Sandbox/Docker/class/complex/client/node-contrast.tgz",
+  "_shasum": "af051ed07a8d2ecfc3d677346dc8c7f4739c1f2e",
+  "_spec": "node-contrast.tgz",
+  "_where": "/Users/marklacasse/Sandbox/Docker/class/complex/client",
+  "author": {
+    "name": "Contrast Security"
+  },
+  "bin": {
+    "node-contrast": "./cli.js"
+  },
+  "bundleDependencies": [
+    "@contrast/distringuish-prebuilt",
+    "@contrast/escodegen",
+    "@contrast/flat",
+    "@contrast/heapdump",
+    "@contrast/protobuf-api",
+    "asar",
+    "base64url",
+    "big-integer",
+    "bluebird",
+    "commander",
+    "content-security-policy-parser",
+    "cookie",
+    "cookies",
+    "crc-32",
+    "estraverse",
+    "gunzip-maybe",
+    "hooker",
+    "ipaddr.js",
+    "js-yaml",
+    "jspack",
+    "levenshtein",
+    "lodash",
+    "moment",
+    "on-finished",
+    "parseurl",
+    "read-installed",
+    "request",
+    "response-spy",
+    "semver",
+    "trumpet",
+    "winston",
+    "winston-daily-rotate-file",
+    "winston-syslog"
+  ],
+  "contributors": [
+    {
+      "name": "Matt Austin"
+    },
+    {
+      "name": "Ehden Sinai"
+    },
+    {
+      "name": "Matthew Henry"
+    },
+    {
+      "name": "Alex Boyd"
+    },
+    {
+      "name": "Ben Greenberg"
+    },
+    {
+      "name": "Bob Evans"
+    },
+    {
+      "name": "Griffin Yourick"
+    },
+    {
+      "name": "Ati Ok"
+    },
+    {
+      "name": "Pat McClory"
+    }
+  ],
+  "dependencies": {
+    "@contrast/distringuish-prebuilt": "^1.8.1",
+    "@contrast/escodegen": "^1.11.3",
+    "@contrast/flat": "^4.1.1",
+    "@contrast/heapdump": "^0.3.13",
+    "@contrast/protobuf-api": "^1.7.0",
+    "asar": "^2.0.1",
+    "base64url": "^3.0.1",
+    "big-integer": "^1.6.36",
+    "bluebird": "^3.5.3",
+    "commander": "^2.19.0",
+    "content-security-policy-parser": "^0.2.0",
+    "cookie": "^0.3.1",
+    "cookies": "^0.7.3",
+    "crc-32": "^1.0.0",
+    "estraverse": "^4.2.0",
+    "gunzip-maybe": "^1.4.1",
+    "hooker": "^0.2.3",
+    "ipaddr.js": "^1.8.1",
+    "js-yaml": "^3.13.1",
+    "jspack": "0.0.4",
+    "levenshtein": "^1.0.5",
+    "lodash": "^4.17.15",
+    "moment": "^2.21.0",
+    "on-finished": "^2.3.0",
+    "parseurl": "^1.3.3",
+    "read-installed": "^4.0.0",
+    "request": "^2.88.0",
+    "response-spy": "0.0.4",
+    "semver": "^5.6.0",
+    "trumpet": "^1.7.2",
+    "winston": "^3.1.0",
+    "winston-daily-rotate-file": "^3.5.1",
+    "winston-syslog": "2.1.0"
+  },
+  "deprecated": false,
+  "description": "Node.js security instrumentation by Contrast Security",
+  "devDependencies": {
+    "@contrast/eslint-config": "^1.0.3",
+    "@contrast/fake-module": "file:test/mock/contrast-fake",
+    "@hapi/boom": "file:test/mock/boom",
+    "@hapi/hapi": "file:test/mock/hapi17",
+    "ast-types": "^0.12.4",
+    "aws-sdk": "file:test/mock/aws-sdk",
+    "axios": "^0.19.0",
+    "callsite": "^1.0.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-like": "^1.1.1",
+    "codecov": "^3.6.5",
+    "csv-writer": "^1.2.0",
+    "deasync": "^0.1.15",
+    "escape-html": "^1.0.3",
+    "eslint": "^5.9.0",
+    "express": "file:test/mock/express",
+    "glob": "^7.1.4",
+    "husky": "^1.3.1",
+    "jsdoc": "^3.6.3",
+    "koa-router": "^7.4.0",
+    "libxmljs": "file:test/mock/libxmljs",
+    "lint-staged": "^8.1.6",
+    "madge": "^3.3.0",
+    "marsdb": "file:test/mock/marsdb",
+    "mocha": "^5.2.0",
+    "mongodb": "file:test/mock/mongodb",
+    "mustache": "^3.0.1",
+    "nock": "^10.0.6",
+    "npm-license-crawler": "^0.2.0",
+    "nyc": "^14.1.0",
+    "pg": "file:test/mock/pg",
+    "prettier": "^1.15.2",
+    "proxyquire": "^2.1.0",
+    "selfsigned": "^1.10.4",
+    "sinon": "^7.2.2",
+    "sinon-chai": "^3.3.0",
+    "sqlite3": "file:test/mock/sqlite3",
+    "xunit-file": "1.0.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "keywords": [
+    "security",
+    "instrumentation",
+    "debug"
+  ],
+  "license": "UNLICENSED",
+  "lint-staged": {
+    "package.json": [
+      "npm run update-bundle-deps"
+    ],
+    "**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "main": "cli.js",
+  "name": "node_contrast",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://bitbucket.org/contrastsecurity/node-agent.git"
+  },
+  "scripts": {
+    "bench": "NODE_ENV=test mocha './test/benchmark/**/*.js'",
+    "build": "asar p lib/ lib.asar",
+    "docker-pkg": "docker build -t node-agent .",
+    "docs": "jsdoc -c ../.jsdoc.json",
+    "extract-licenses": "node scripts/extract-licenses",
+    "findCircularDeps": "madge -c .",
+    "fix": "eslint . --fix",
+    "postversion": "git add package.json package-lock.json; git commit -m 'bumping version'; git push origin; git push origin --tags",
+    "preversion": "npm run test:no-cov",
+    "test": "scripts/test.sh",
+    "test:ci": "scripts/test.sh ci",
+    "test:debug": "scripts/test.sh debug",
+    "test:gh-ci": "scripts/test.sh gh-ci",
+    "test:no-cov": "scripts/test.sh no-cov",
+    "update-bundle-deps": "node scripts/update-bundled-deps"
+  },
+  "version": "2.12.0"
+}
