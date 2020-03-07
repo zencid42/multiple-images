@@ -1,0 +1,25 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t zencid/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true zencid/react-test npm test -- --coverage
+
+after_success:
+  - docker build -t zencid/multi-client ./client
+  - docker build -t zencid/multi-nginx ./nginx
+  - docker build -t zencid/multi-server ./server
+  - docker build -t zencid/worker ./worker
+  #login to docker hub
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+  # take images to docker hub
+  - docker push zencid/multi-client
+  - docker push zencid/multi-nginx
+  - docker push zencid/mutli-server
+  - docker push zencid/multi-worker
+  
+
