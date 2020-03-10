@@ -10,10 +10,9 @@
     "axios": "0.18.0"
   },
   "scripts": {
-    "contrast": "node-contrast node_modules/react-scripts/scripts/start.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
 }
