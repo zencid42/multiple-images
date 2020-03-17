@@ -16,14 +16,14 @@ after_success:
   - docker build -t zencid/multi-client:client ./client
   - docker build -t zencid/multi-nginx:nginx ./nginx
   - docker build -t zencid/multi-server:server ./server
-  - docker build -t zencid/worker:worker ./worker
+  - docker build -t zencid/multi-worker:worker ./worker
   #login to docker hub
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   # take images to docker hub
   - docker push zencid/multi-client
   - docker push zencid/multi-nginx
-  - docker push zencid/mutli-server
+  - docker push zencid/multi-server
   - docker push zencid/multi-worker
 
 
