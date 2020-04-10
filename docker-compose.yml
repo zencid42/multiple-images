@@ -1,30 +1,23 @@
 version: '3'
-services: 
-  postgres: 
+services:
+  postgres:
     image: 'postgres:latest'
-    environment:
-      - POSTGRES_PASSWORD=postgres_password
-  redis: 
-    image: 'redis:latest'  
+  redis:
+    image: 'redis:latest'
   nginx:
     restart: always
-    depends_on: 
-      - api
-      - client
     build:
       dockerfile: Dockerfile.dev
       context: ./nginx
-    ports: 
+    ports:
       - '3050:80'
   api:
-    depends_on:
-      - postgres
-    build: 
+    build:
       dockerfile: Dockerfile.dev
       context: ./server
-    volumes: 
-      - /app/node_modules  #this is left alone and does not look for ./server 
-      - ./server:/app #causes the app to access the ./server folder every time it goes to /app
+    volumes:
+      - /app/node_modules
+      - ./server:/app
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
@@ -33,26 +26,20 @@ services:
       - PGDATABASE=postgres
       - PGPASSWORD=postgres_password
       - PGPORT=5432
-  client: 
+  client:
     build:
       dockerfile: Dockerfile.dev
       context: ./client
     volumes:
       - /app/node_modules
       - ./client:/app
-  worker: 
+  worker:
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
     build:
       dockerfile: Dockerfile.dev
       context: ./worker
     volumes:
       - /app/node_modules
       - ./worker:/app
-    environment: 
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-  
-
-
-      
-
-    

@@ -1,7 +1,6 @@
 FROM node:alpine
-WORKDIR '/app'
+WORKDIR "/app"
 COPY ./package.json ./
 RUN npm install
-COPY . . 
-#RUN npm install node-contrast.tgz --no-optional --no-save
-CMD ["npm","run","dev"]
+COPY . .
+CMD ["npm", "run", "dev"]
