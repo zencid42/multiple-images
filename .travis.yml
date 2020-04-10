@@ -13,10 +13,10 @@ script:
   - docker run -e CI=true zencid/react-test npm test
 
 after_success:
-  - docker build -t zencid/multi-client:client ./client
-  - docker build -t zencid/multi-nginx:nginx ./nginx
-  - docker build -t zencid/multi-server:server ./server
-  - docker build -t zencid/multi-worker:worker ./worker
+  - docker build -t zencid/multi-client ./client
+  - docker build -t zencid/multi-nginx ./nginx
+  - docker build -t zencid/multi-server ./server
+  - docker build -t zencid/multi-worker ./worker
   #login to docker hub
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
@@ -27,3 +27,5 @@ after_success:
   - docker push zencid/multi-worker
 
 
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key: $AWS_SECRET_KEY
