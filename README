@@ -1,0 +1,5 @@
+Startup and shutdown K8s with
+
+skaffold dev
+
+proceed to http://localhost:80

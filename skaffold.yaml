@@ -1,0 +1,43 @@
+apiVersion: skaffold/v1beta2
+kind: Config
+build: 
+  local:
+    push: false
+  artifacts:
+    - image: zencid/multi-client
+      context: client
+      docker: 
+        dockerfile: Dockerfile.dev
+      sync: #causes skaffold to inject changes into pod.  If not in this list it will do so by rebuilding the image. 
+        '**/*.js': .
+        '**/*.css': .
+        '**/*.html': .
+    - image: zencid/multi-server
+      context: server
+      docker:
+        dockerfile: Dockerfile.dev
+      sync:
+        '**/*.js': .
+    - image: zencid/multi-worker
+      context: worker
+      docker:
+        dockerfile: Dockerfile.dev
+      sync:
+        '**/*.js': .
+deploy: 
+  kubectl:
+    manifests: #which objects skaffold controls and will shut down when stopped. 
+      - k8s/client-deployment.yaml
+      - k8s/server-deployment.yaml
+      - k8s/worker-deployment.yaml
+      - k8s/redis-deployment.yaml
+      - k8s/redis-cluster-ip-service.yaml
+      - k8s/server-cluster-ip-service.yaml
+      - k8s/client-cluster-ip-service.yaml
+  #This is not going to control the postgres stuff and will need to be manually started. Going to add it here as I am not using it for anything else right now.
+      - k8s/postgres-cluster-ip-service.yaml
+      - k8s/postgres-deployment.yaml
+  #adding ingress as well (traffic cop)
+      - k8s/ingress-service.yaml
+  #adding in volumclaim as well just to make sure it is added
+      - k8s/database-persistent-volume-claim.yaml
